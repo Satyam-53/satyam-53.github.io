@@ -1,0 +1,4 @@
+title: "Satyam Srivastava"
+theme: minima  # Or none if you're custom
+sass:
+  style: compressed

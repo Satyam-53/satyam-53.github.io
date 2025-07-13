@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Satyam Srivastava</title>
   <style>
-    /* General Dark Theme Styles */
     body {
       font-family: Arial, sans-serif;
       background-color: #121212;
@@ -15,7 +14,11 @@
       text-align: center;
     }
 
-    /* Header Section */
+    a {
+      color: #ff6347;
+      text-decoration: none;
+    }
+
     header {
       margin-top: 50px;
     }
@@ -28,7 +31,7 @@
     }
 
     .name {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: bold;
       margin-top: 15px;
       color: #ff6347;
@@ -39,10 +42,9 @@
       color: #bbbbbb;
     }
 
-    /* Main Content Section */
-    .content {
-      margin: 30px auto;
-      max-width: 600px;
+    section {
+      margin: 60px auto;
+      max-width: 800px;
       padding: 20px;
       background-color: #1e1e1e;
       border-radius: 10px;
@@ -50,19 +52,15 @@
       border: 1px solid #333;
     }
 
-    .content h1 {
+    section h2 {
       color: #ff4500;
+      margin-bottom: 15px;
     }
 
-    .content p {
-      font-size: 16px;
-      margin: 10px 0;
-    }
-
-    /* Play Button */
-    #playButton {
-      margin-top: 20px;
-      padding: 10px 15px;
+    .button {
+      display: inline-block;
+      margin: 20px 10px 0;
+      padding: 10px 20px;
       background-color: #ff6347;
       color: #fff;
       border: none;
@@ -71,43 +69,104 @@
       font-size: 16px;
     }
 
-    #playButton:hover {
+    .button:hover {
       background-color: #ff4500;
+    }
+
+    footer {
+      margin: 40px 0;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
+  <!-- Header -->
   <header>
-    <img src="/headshot.jpeg" alt="Your Photo" class="profile-img">
+    <img src="/headshot.jpeg" alt="Satyam's Photo" class="profile-img" />
     <div class="name">Satyam Srivastava</div>
-    <div class="tagline"></div>
+    <div class="tagline">Researcher | Engineer | Curious Human</div>
   </header>
 
-  <!-- Main Content Section -->
-  <div class="content">
-    <h1>⚠️ Pardon the Mess!</h1>
-    <p>Yes, we’re working on it. No, it’s not done yet. Shocking, isn’t it? 😉</p>
-    <p style="font-style: italic;">
-      🎻 <span id="timeline"></span>
+  <!-- About Section -->
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I'm currently working as a Member of Technical Staff at <strong>Cohesity</strong> where I build robust distributed systems.  
+      My academic journey took me from <strong>BITS Pilani</strong> to a DAAD scholarship in Germany, to a research stint at UC San Diego.  
+      I’ll soon be joining the <strong>MS CS program at UW–Madison</strong> to dive deeper into machine learning, perception, and cognition-inspired AI.
     </p>
-    <p style="margin-top: 20px; font-size: 20px; font-weight: bold; color: #ff6347;">
-      Check back soonish... or later.
+  </section>
+
+  <!-- Work / Interests -->
+  <section>
+    <h2>What I Do</h2>
+    <p>
+      I'm passionate about solving problems at the intersection of intelligence and real-world deployment — from integrating radar sensors in simulators to making AI models more interpretable and human-aligned.
     </p>
-  </div>
+    <p>Domains I work in:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li>🤖 Machine Learning & Computer Vision</li>
+      <li>🚗 Autonomous Navigation</li>
+      <li>🧠 Cognitive-Inspired AI</li>
+      <li>📦 Distributed Systems</li>
+    </ul>
+  </section>
 
-  <!-- Background Music -->
-  <audio id="dramaticMusic" loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
+  <!-- Projects -->
+  <section>
+    <h2>Projects & Research</h2>
+    <p><strong>🏥 Capacitive ECG Reliability (DAAD Scholar, TU Braunschweig)</strong><br />
+      Deep learning + imaging + physiology = reliable, non-invasive heart monitoring.
+    </p>
+    <p><strong>🚗 Carla Radar Fusion (UCSD)</strong><br />
+      Radar + Lidar + Camera fusion for robust people tracking and environment perception.
+    </p>
+    <p><strong>💳 Virtual Credit Card Microservice (Wells Fargo)</strong><br />
+      Secure online payments using a Spring Boot + Java based VCC generator.</p>
+    <p>...and more coming soon!</p>
+  </section>
 
-  <button id="playButton">🎵 Play Dramatic Music</button>
+  <!-- Writing / Blog -->
+  <section>
+    <h2>Words I Sometimes Write</h2>
+    <p>
+      Occasionally, I write about research, reflections, and sometimes heartbreaks that belong in poetry. 
+    </p>
+    <p><a href="/blog/">Read My Writings →</a></p>
+  </section>
 
-  <!-- Script for Timeline and Music -->
+  <!-- Contact -->
+  <section>
+    <h2>Get In Touch</h2>
+    <p>
+      Always open to conversations about ideas, collaborations, or just interesting questions.  
+      Best way to reach me? <a href="mailto:satyam@example.com">Email me</a> or connect on  
+      <a href="https://linkedin.com/in/satyamsrivastava">LinkedIn</a>.
+    </p>
+  </section>
+
+  <!-- Legacy Mode / Music Toggle -->
+  <section>
+    <h2>Legacy Mode 🎭</h2>
+    <p style="font-style: italic;">Still miss the dramatic music and vague promises?</p>
+    <button class="button" id="playButton">🎵 Play Dramatic Music</button>
+    <p id="timeline" style="margin-top: 10px; font-style: italic;"></p>
+
+    <audio id="dramaticMusic" loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Satyam Srivastava · Built with ❤️ and caffeine · Hosted on GitHub Pages
+  </footer>
+
+  <!-- Script -->
   <script>
-    // Vague timeline generator
     const vagueTimelines = [
       "sometime next week... or year.",
       "soon... in geological terms.",
@@ -115,17 +174,15 @@
       "probably before the next ice age.",
       "when we feel like it!"
     ];
-    
-    // Randomly update the timeline every few seconds
+
     const timelineElement = document.getElementById("timeline");
+    const playButton = document.getElementById("playButton");
+    const dramaticMusic = document.getElementById("dramaticMusic");
+
     setInterval(() => {
       const randomIndex = Math.floor(Math.random() * vagueTimelines.length);
       timelineElement.textContent = vagueTimelines[randomIndex];
-    }, 3000); // Updates every 3 seconds
-
-    // Play/pause music functionality
-    const playButton = document.getElementById("playButton");
-    const dramaticMusic = document.getElementById("dramaticMusic");
+    }, 3000);
 
     playButton.addEventListener("click", () => {
       if (dramaticMusic.paused) {
