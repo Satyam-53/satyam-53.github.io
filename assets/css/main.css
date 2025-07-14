@@ -77,3 +77,49 @@ footer {
 .button:hover {
   background-color: #ff4500;
 }
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+body.light-mode a {
+  color: #007acc;
+}
+
+body.light-mode .name {
+  color: #007acc;
+}
+
+body.light-mode .tagline {
+  color: #555;
+}
+
+body.light-mode section {
+  background-color: #f4f4f4;
+  color: #121212;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .button {
+  background-color: #007acc;
+  color: white;
+}
+
+body.light-mode .button:hover {
+  background-color: #005f9e;
+}
+
+/* Light mode styles for profile image */
+body.light-mode .profile-img {
+  border: 3px solid #007acc;
+}
+
+body.light-mode section h2 {
+  color: #007acc;
+}
+
+body.light-mode footer {
+  color: #666;
+}

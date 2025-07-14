@@ -6,6 +6,7 @@
   <title>{{ site.title | default: "Satyam Srivastava" }}</title>
   <link rel="stylesheet" href="/assets/css/main.css"/>
 </head>
+
 <body>
 
   {% include header.html %}
@@ -31,6 +32,33 @@
   {% include footer.html %}
 
   <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById("themeToggle");
+      const body = document.body;
+
+      function updateTheme() {
+        const isLight = localStorage.getItem("theme") === "light";
+        body.classList.toggle("light-mode", isLight);
+        if (toggleBtn) {
+          toggleBtn.textContent = isLight ? "🌙 Dark Mode" : "☀️ Light Mode";
+        }
+      }
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+          const current = localStorage.getItem("theme");
+          const next = current === "light" ? "dark" : "light";
+          localStorage.setItem("theme", next);
+          updateTheme();
+        });
+      }
+
+      // Initialize theme on page load
+      updateTheme();
+    });
+
+    // Legacy music functionality
     const vagueTimelines = [
       "sometime next week... or year.",
       "soon... in geological terms.",
