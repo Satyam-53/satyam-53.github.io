@@ -1,0 +1,125 @@
+/* General Dark Theme */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+a {
+  color: #ff6347;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Profile Section */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #ff6347;
+}
+
+.name {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #ff6347;
+}
+
+.tagline {
+  font-size: 18px;
+  color: #bbbbbb;
+}
+
+/* Section Containers */
+section {
+  margin: 60px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  border: 1px solid #333;
+}
+
+section h2 {
+  color: #ff4500;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  margin: 40px 0;
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}
+
+/* Button Styling */
+.button {
+  display: inline-block;
+  margin: 20px 10px 0;
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #ff4500;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+body.light-mode a {
+  color: #007acc;
+}
+
+body.light-mode .name {
+  color: #007acc;
+}
+
+body.light-mode .tagline {
+  color: #555;
+}
+
+body.light-mode section {
+  background-color: #f4f4f4;
+  color: #121212;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .button {
+  background-color: #007acc;
+  color: white;
+}
+
+body.light-mode .button:hover {
+  background-color: #005f9e;
+}
+
+/* Light mode styles for profile image */
+body.light-mode .profile-img {
+  border: 3px solid #007acc;
+}
+
+body.light-mode section h2 {
+  color: #007acc;
+}
+
+body.light-mode footer {
+  color: #666;
+}

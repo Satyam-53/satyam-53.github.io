@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Satyam Srivastava</title>
   <style>
-    /* General Dark Theme Styles */
     body {
       font-family: Arial, sans-serif;
       background-color: #121212;
@@ -15,7 +14,11 @@
       text-align: center;
     }
 
-    /* Header Section */
+    a {
+      color: #ff6347;
+      text-decoration: none;
+    }
+
     header {
       margin-top: 50px;
     }
@@ -28,7 +31,7 @@
     }
 
     .name {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: bold;
       margin-top: 15px;
       color: #ff6347;
@@ -39,10 +42,9 @@
       color: #bbbbbb;
     }
 
-    /* Main Content Section */
-    .content {
-      margin: 30px auto;
-      max-width: 600px;
+    section {
+      margin: 60px auto;
+      max-width: 800px;
       padding: 20px;
       background-color: #1e1e1e;
       border-radius: 10px;
@@ -50,19 +52,15 @@
       border: 1px solid #333;
     }
 
-    .content h1 {
+    section h2 {
       color: #ff4500;
+      margin-bottom: 15px;
     }
 
-    .content p {
-      font-size: 16px;
-      margin: 10px 0;
-    }
-
-    /* Play Button */
-    #playButton {
-      margin-top: 20px;
-      padding: 10px 15px;
+    .button {
+      display: inline-block;
+      margin: 20px 10px 0;
+      padding: 10px 20px;
       background-color: #ff6347;
       color: #fff;
       border: none;
@@ -71,43 +69,189 @@
       font-size: 16px;
     }
 
-    #playButton:hover {
+    .button:hover {
       background-color: #ff4500;
+    }
+
+    footer {
+      margin: 40px 0;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
+  <!-- Header -->
   <header>
-    <img src="/headshot.jpeg" alt="Your Photo" class="profile-img">
+    <img src="/headshot.jpeg" alt="Satyam's Photo" class="profile-img" />
     <div class="name">Satyam Srivastava</div>
-    <div class="tagline"></div>
+    <div class="tagline">Researcher | Engineer | Curious Human</div>
   </header>
 
-  <!-- Main Content Section -->
-  <div class="content">
-    <h1>⚠️ Pardon the Mess!</h1>
-    <p>Yes, we’re working on it. No, it’s not done yet. Shocking, isn’t it? 😉</p>
-    <p style="font-style: italic;">
-      🎻 <span id="timeline"></span>
+  <!-- About Section -->
+  <section>
+    <h2>About Me</h2>
+    <p>I’m currently pursuing my <strong>MS in Computer Science at UC San Diego</strong>, focusing on <strong>machine learning, computer vision, and cognition-inspired AI</strong>.</p>
+    <p>
+      Previously at <strong>Cohesity</strong>, I built <strong>scalable distributed infrastructure</strong>, implemented <strong>REST APIs</strong>, enhanced <strong>system reliability</strong> through cross-functional collaboration, and developed a <strong>cutting-edge backup adapter</strong> with <strong>CI/CD integration</strong>, achieving high <strong>scalability, resilience, and maintainability</strong>.
     </p>
-    <p style="margin-top: 20px; font-size: 20px; font-weight: bold; color: #ff6347;">
-      Check back soonish... or later.
+    <p>My journey has taken me from <strong>BITS Pilani</strong>, to a <strong>DAAD Scholarship</strong> at TU Braunschweig where I developed a multimodal cECG dataset and deep learning reliability model, and to UC San Diego as a <strong>Khorana Scholar</strong> for my <strong>undergraduate thesis</strong>, where I built <strong>C-Shenron</strong>, a realistic radar simulation framework for autonomous driving research.</p>
+
+  </section>
+
+  <!-- Work / Interests -->
+  <section>
+    <h2>What I Do</h2>
+    <p>
+      I'm passionate about building reliable systems and solving problems at the intersection of 
+      <strong>software engineering</strong> and <strong>intelligent decision-making</strong> — from designing scalable 
+      infrastructure to making AI models more interpretable, scalable, and human-aligned.
     </p>
-  </div>
+    <p>Domains I work in:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li>💻 Software Engineering & Scalable Systems</li>
+      <li>🤖 Machine Learning & Computer Vision</li>
+      <li>🚗 Autonomous Navigation</li>
+      <li>🧠 Cognitive-Inspired AI</li>
+      <li>📦 Distributed Systems</li>
+    </ul>
+  </section>
+  
+  <!-- Projects -->
+  <!-- Projects & Research -->
+<!-- Projects & Research -->
+<section>
+  <h2>Selected Projects</h2>
 
-  <!-- Background Music -->
-  <audio id="dramaticMusic" loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
+  <p><strong>🧠 Cognitive-Inspired RL with Episodic Memory (Texas State University)</strong><br />
+    Enhanced Deep Q-Networks by integrating working memory and episodic replay, improving learning efficiency and stability in complex environments.
+  </p>
 
-  <button id="playButton">🎵 Play Dramatic Music</button>
+  <p><strong>💻 Compiler for ERPLAG Programming Language (CS F363)</strong><br />
+    Built a compiler with efficient lexer, memory-optimized AST (80% compression), and a type-checker detecting 95% of errors.
+  </p>
 
-  <!-- Script for Timeline and Music -->
+  <p><strong>📚 Library Management System (CS F212)</strong><br />
+    Designed a MySQL-based system simulating BITS library operations with seamless book tracking and inventory management.
+  </p>
+
+  <p><strong>🏥 Detecting Multi-Drug Resistant TB from Chest X-rays</strong><br />
+    Developed a CNN model classifying drug-sensitive and drug-resistant TB strains, improving benchmark accuracy from 66% to 98%.
+  </p>
+
+</section>
+
+  <!-- Publications -->
+<section>
+  <h2>Publications</h2>
+  <p><strong>🏎️ C-Shenron: A Realistic Radar Simulation Framework for CARLA (VTC 2025)</strong><br />
+    Developed a radar simulation framework enabling multimodal fusion for autonomous driving. 
+    <a href="https://wcsng.ucsd.edu/c-shenron/">Link</a>
+  </p>
+  <p><strong>🏎️ Demo Abstract: C-Shenron, ACM SenSys 2025</strong><br />
+    Demonstrated CARLA-based radar simulation for research and benchmarking. <a href="https://dl.acm.org/doi/10.1145/3715014.3724379">Link</a></p>
+  <p><strong>🧠 CEMDQN: Cognitive-inspired Episodic Memory in DQNs, IJCNN 2023</strong><br />
+    Presented in-person in Queensland, Australia, introducing episodic memory improvements in reinforcement learning. <a href="https://ieeexplore.ieee.org/document/10192032">Link</a></p>
+  <p><strong>🏥 Reliability Estimation of Armchair-Based Capacitive ECG, SPIE Medical Imaging 2023</strong><br />
+    Developed deep learning model to assess cECG signal reliability using video-based pose estimation. <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12469/124690E/Reliability-estimation-of-armchair-based-capacitive-ECG-using-video-based/10.1117/12.2654327.short">Link</a></p>
+</section>
+
+<!-- Awards -->
+<section>
+  <h2>Awards</h2>
+  <p><strong>🎓 Khorana Scholarship</strong><br />
+    Awarded by DBT, IUSSTF, and WINStep Forward to undertake research at leading U.S. universities.
+  </p>
+  <p><strong>🎓 BITSAA Udaan Scholarship</strong><br />
+    Supported participation in IJCNN conference by covering travel and registration expenses.
+  </p>
+  <p><strong>🎓 IEEE CIS Travel Grant</strong><br />
+    Received for presenting at an IEEE Computational Intelligence Society-sponsored IJCNN conference.
+  </p>
+  <p><strong>🎓 DAAD-WISE Scholarship</strong><br />
+    Awarded by DAAD for a research internship at Technical University of Braunschweig, Germany.
+  </p>
+  <p><strong>🎓 Mitacs GRI Award</strong><br />
+    Globalink Research Internship award for summer research at University of Toronto, Canada.
+  </p>
+  <p><strong>🎓 Birla Institute of Technology and Science Best Paper Award</strong><br />
+    Recognized for research rigor and academic excellence.</p>
+  <p><strong>🎓 BITS Merit-cum-Need Scholarship</strong><br />
+    Consistently awarded for academic excellence across all semesters.</p>
+</section>
+
+<!-- Conferences & Workshops -->
+<section>
+  <h2>Conferences & Workshops</h2>
+  <p><strong>International Joint Conference on Neural Networks (IJCNN) 2023</strong><br />
+    Organized by IEEE CIS & INNS | Queensland, Australia.<br />
+    Presented research on cognitive-inspired episodic memory in Deep Q-Networks and engaged with experts in neural network developments.
+  </p>
+</section>
+
+<!-- Leadership & Teaching -->
+<section>
+  <h2>Leadership & Teaching</h2>
+  <p><strong>🌟 BITS2Research Alumni Mentorship Program (Nov 2023 – Ongoing)</strong><br />
+    Mentoring undergraduate students in research exploration, project development, and career pathways while fostering collaboration and impactful learning.
+  </p>
+  <p><strong>👨‍🏫 CS F213: Object Oriented Programming (Jan 2023 – May 2023)</strong><br />
+    Undergraduate Teaching Assistant – Prof. Avinash Gautam.<br />
+    Designed weekly lab sheets and guided students during lab hours, assisting with problem-solving and concept clarification.
+  </p>
+  <p><strong>👨‍🏫 CS F222: Discrete Structures for Computer Science (Aug 2022 – Dec 2022)</strong><br />
+    Undergraduate Teaching Assistant – Prof. Sundaresan Raman.<br />
+    Prepared weekly practice sheets and helped students understand course concepts during tutorials.
+  </p>
+  <p><strong>👨‍🏫 CS F111: Computer Programming (Aug 2022 – Dec 2022)</strong><br />
+    Undergraduate Teaching Assistant – Prof. Jagat Sesh Challa.<br />
+    Assisted in designing lab sheets and guided students through exercises and concept clarification.
+  </p>
+  <p><strong>🤝 Peer Mentorship Program (Aug 2020 – May 2021)</strong><br />
+    Led a peer mentorship initiative, supporting fellow students academically and personally through one-on-one sessions and group discussions.
+  </p>
+</section>
+
+  <!-- Writing / Blog
+  <section>
+    <h2>Words I Sometimes Write</h2>
+    <p>
+      Occasionally, I write about research, reflections, and sometimes heartbreaks that belong in poetry. 
+    </p>
+    <p><a href="/blog/">Read My Writings →</a></p>
+  </section> -->
+
+  <!-- Contact -->
+  <section>
+    <h2>Get In Touch</h2>
+    <p>
+      Always open to conversations about ideas, collaborations, or just interesting questions.  
+      Best way to reach me? <a href="mailto:srivastavasatyam53@gmail.com">Email me</a> or connect on  
+      <a href="https://www.linkedin.com/in/satyam-srivastava-981491203/">LinkedIn</a>.
+    </p>
+  </section>
+
+  <!-- Legacy Mode / Music Toggle
+  <section>
+    <h2>Legacy Mode 🎭</h2>
+    <p style="font-style: italic;">Still miss the dramatic music and vague promises?</p>
+    <button class="button" id="playButton">🎵 Play Dramatic Music</button>
+    <p id="timeline" style="margin-top: 10px; font-style: italic;"></p>
+
+    <audio id="dramaticMusic" loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+  </section> -->
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Satyam Srivastava · Built with ❤️ and caffeine · Hosted on GitHub Pages
+  </footer>
+
+  <!-- Script -->
   <script>
-    // Vague timeline generator
     const vagueTimelines = [
       "sometime next week... or year.",
       "soon... in geological terms.",
@@ -115,17 +259,15 @@
       "probably before the next ice age.",
       "when we feel like it!"
     ];
-    
-    // Randomly update the timeline every few seconds
+
     const timelineElement = document.getElementById("timeline");
+    const playButton = document.getElementById("playButton");
+    const dramaticMusic = document.getElementById("dramaticMusic");
+
     setInterval(() => {
       const randomIndex = Math.floor(Math.random() * vagueTimelines.length);
       timelineElement.textContent = vagueTimelines[randomIndex];
-    }, 3000); // Updates every 3 seconds
-
-    // Play/pause music functionality
-    const playButton = document.getElementById("playButton");
-    const dramaticMusic = document.getElementById("dramaticMusic");
+    }, 3000);
 
     playButton.addEventListener("click", () => {
       if (dramaticMusic.paused) {

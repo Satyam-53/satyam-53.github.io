@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ site.title | default: "Satyam Srivastava" }}</title>
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+</head>
+
+<body>
+
+  {% include header.html %}
+
+  <!-- Main content from index.md -->
+  <main>
+    {{ content }}
+  </main>
+
+  <!-- Legacy Music Mode -->
+  <section>
+    <h2>Legacy Mode 🎭</h2>
+    <p style="font-style: italic;">Still miss the dramatic music and vague promises?</p>
+    <button class="button" id="playButton">🎵 Play Dramatic Music</button>
+    <p id="timeline" style="margin-top: 10px; font-style: italic;"></p>
+
+    <audio id="dramaticMusic" loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3"/>
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+  
+  {% include footer.html %}
+
+  <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById("themeToggle");
+      const body = document.body;
+
+      function updateTheme() {
+        const isLight = localStorage.getItem("theme") === "light";
+        body.classList.toggle("light-mode", isLight);
+        if (toggleBtn) {
+          toggleBtn.textContent = isLight ? "🌙 Dark Mode" : "☀️ Light Mode";
+        }
+      }
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+          const current = localStorage.getItem("theme");
+          const next = current === "light" ? "dark" : "light";
+          localStorage.setItem("theme", next);
+          updateTheme();
+        });
+      }
+
+      // Initialize theme on page load
+      updateTheme();
+    });
+
+    // Legacy music functionality
+    const vagueTimelines = [
+      "sometime next week... or year.",
+      "soon... in geological terms.",
+      "when the stars align.",
+      "probably before the next ice age.",
+      "when we feel like it!"
+    ];
+    const timelineElement = document.getElementById("timeline");
+    const playButton = document.getElementById("playButton");
+    const dramaticMusic = document.getElementById("dramaticMusic");
+
+    setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * vagueTimelines.length);
+      timelineElement.textContent = vagueTimelines[randomIndex];
+    }, 3000);
+
+    playButton.addEventListener("click", () => {
+      if (dramaticMusic.paused) {
+        dramaticMusic.play();
+        playButton.textContent = "⏸️ Pause Dramatic Music";
+      } else {
+        dramaticMusic.pause();
+        playButton.textContent = "🎵 Play Dramatic Music";
+      }
+    });
+  </script>
+
+</body>
+</html>
