@@ -1,90 +1,36 @@
-# Getting Started
+# Satyam Srivastava Portfolio
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+Personal website for `satyam-53.github.io`, built with Jekyll and deployed through GitHub Pages.
 
-See more info at https://academicpages.github.io/
+## Structure
 
-## Running locally
+- `_data/profile.yml` contains the homepage content: profile links, experience, projects, publications, awards, and leadership.
+- `_layouts/home.html` renders the portfolio page.
+- `_includes/header.html` and `_includes/footer.html` hold shared shell UI.
+- `assets/css/main.css` contains the full visual system.
+- `index.md` is the canonical homepage entrypoint.
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+## Local Development
 
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-Start by build the container:
+This repo uses Ruby/Jekyll through Bundler. In this workspace, keep Ruby commands inside the conda `base` environment:
 
 ```bash
-docker build -t jekyll-site .
+conda run -n base /Users/satyam53/.gem/ruby/2.6.0/bin/bundle exec jekyll serve
 ```
 
-Next, run the container:
+If dependencies are missing, install them before serving:
+
 ```bash
-docker run -p 4000:4000 --rm -v $(pwd):/usr/src/app jekyll-site
+conda run -n base gem install --user-install bundler:2.3.3
+conda run -n base env BUNDLE_PATH=/private/tmp/satyam-site-bundle /Users/satyam53/.gem/ruby/2.6.0/bin/bundle install
 ```
 
-To run the `docker run` command on Windows, you need to adjust the syntax for the volume mapping (`-v`) as Windows uses different path formats. Here's how to run your command on Windows:
+Current note: the system Ruby visible from conda `base` is Ruby 2.6.10. If Bundler resolves gems that require Ruby 2.7+, install a newer Ruby inside `base` or use a newer Ruby manager before running the Jekyll build locally.
 
-### Steps for Windows:
-1. **Check Docker Installation**: Ensure Docker is installed and running.
-2. **Adjust Path for Volume Mapping**:
+## Updating Content
 
-   - On Windows, replace `$(pwd)` with the full absolute path to your current directory. For example:
+Edit `_data/profile.yml` for most website updates. When a resume PDF is ready, add it at `assets/files/resume.pdf` and set:
 
-     ```bash
-     -v C:\path\to\your\site:/usr/src/app
-     ```
-
-### Full Command Example:
-```bash
-docker run -p 4000:4000 --rm -v C:\path\to\your\site:/usr/src/app jekyll-site
+```yaml
+resume_available: true
 ```
-
-### Things to Keep in Mind:
-1. **Use PowerShell**:
-   - If you are using PowerShell, you can use `${PWD}` for the current directory:
-     ```bash
-     docker run -p 4000:4000 --rm -v ${PWD}:/usr/src/app jekyll-site
-     ```
-
-2. **Enable Docker File Sharing**:
-   - If your volume doesn't map correctly, ensure Docker has access to the drive where your project resides. To do this:
-     - Open Docker Desktop.
-     - Go to *Settings* → *Resources* → *File Sharing*.
-     - Add your drive (e.g., `C:`).
-
-3. **Run in Command Prompt or PowerShell**:
-   - In *Command Prompt*:
-   
-     ```bash
-     docker run -p 4000:4000 --rm -v C:\path\to\your\site:/usr/src/app jekyll-site
-     ```
-   - In *PowerShell*:
-
-     ```bash
-     docker run -p 4000:4000 --rm -v ${PWD}:/usr/src/app jekyll-site
-     ```

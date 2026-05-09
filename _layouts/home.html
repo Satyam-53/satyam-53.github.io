@@ -1,90 +1,185 @@
+{% assign profile = site.data.profile %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ site.title | default: "Satyam Srivastava" }}</title>
-  <link rel="stylesheet" href="/assets/css/main.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="keywords" content="{{ site.keywords | join: ', ' }}">
+  <meta name="author" content="{{ profile.name }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:image" content="{{ site.url }}{{ profile.photo }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
-
 <body>
-
   {% include header.html %}
 
-  <!-- Main content from index.md -->
-  <main>
-    {{ content }}
+  <main id="main-content">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">{{ profile.availability }}</p>
+        <h1 id="hero-title">{{ profile.name }}</h1>
+        <p class="hero-headline">{{ profile.headline }}</p>
+        <p class="hero-summary">{{ profile.short_intro }}</p>
+
+        <div class="hero-actions" aria-label="Primary actions">
+          {% if profile.resume_available %}
+            <a class="button button-primary" href="{{ profile.resume_path }}">Resume</a>
+          {% else %}
+            <a class="button button-primary" href="mailto:{{ profile.email }}?subject=Resume%20request%20-%20Satyam%20Srivastava">{{ profile.resume_note }}</a>
+          {% endif %}
+          <a class="button" href="mailto:{{ profile.email }}">Email</a>
+          <a class="button" href="{{ profile.linkedin }}">LinkedIn</a>
+          <a class="button" href="{{ profile.github }}">GitHub</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Profile summary">
+        <img src="{{ profile.photo }}" alt="{{ profile.name }}" class="profile-photo">
+        <div>
+          <p class="profile-kicker">{{ profile.location }}</p>
+          <p class="profile-title">MS CS, UC San Diego</p>
+          <p class="profile-detail">Graduate Student Researcher at Hao AI Lab, working on FastVideo since March 2026.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="proof-band" aria-label="Career highlights">
+      {% for stat in profile.stats %}
+        <div class="proof-item">
+          <span>{{ stat.value }}</span>
+          <p>{{ stat.label }}</p>
+        </div>
+      {% endfor %}
+    </section>
+
+    <section id="focus" class="section-shell split-section">
+      <div>
+        <p class="section-label">Positioning</p>
+        <h2>ML systems profile with production engineering depth.</h2>
+      </div>
+      <div class="focus-grid">
+        {% for item in profile.focus %}
+          <p>{{ item }}</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="experience" class="section-shell">
+      <div class="section-heading">
+        <p class="section-label">Experience</p>
+        <h2>Research and engineering work</h2>
+      </div>
+      <div class="timeline">
+        {% for item in profile.experience %}
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <p>{{ item.period }}</p>
+              <span>{{ item.organization }}</span>
+            </div>
+            <div class="timeline-content">
+              <h3>{{ item.role }}</h3>
+              <p>{{ item.summary }}</p>
+              <ul>
+                {% for bullet in item.bullets %}
+                  <li>{{ bullet }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="projects" class="section-shell">
+      <div class="section-heading">
+        <p class="section-label">Selected Work</p>
+        <h2>Projects for AI, perception, and systems roles</h2>
+      </div>
+      <div class="project-grid">
+        {% for project in profile.projects %}
+          <article class="project-card">
+            <div class="card-topline">
+              <p>{{ project.context }}</p>
+              {% if project.link %}
+                <a href="{{ project.link }}" aria-label="{{ project.title }} project link">View</a>
+              {% endif %}
+            </div>
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.summary }}</p>
+            <div class="tag-list" aria-label="Project tags">
+              {% for tag in project.tags %}
+                <span>{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="publications" class="section-shell split-section">
+      <div>
+        <p class="section-label">Publications</p>
+        <h2>Research credibility across ML, perception, and medical AI.</h2>
+      </div>
+      <div class="compact-list">
+        {% for publication in profile.publications %}
+          <article>
+            <h3>{{ publication.title }}</h3>
+            <p>{{ publication.venue }}</p>
+            <a href="{{ publication.link }}">Publication link</a>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="recognition" class="section-shell recognition">
+      <div class="section-heading">
+        <p class="section-label">Recognition</p>
+        <h2>Awards, scholarships, and mentoring</h2>
+      </div>
+      <div class="recognition-grid">
+        <div class="award-list">
+          {% for award in profile.awards %}
+            <span>{{ award }}</span>
+          {% endfor %}
+        </div>
+        <div class="leadership-list">
+          {% for item in profile.leadership %}
+            <article>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.summary }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="section-shell contact-inner">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2>Recruiters and collaborators can reach me directly.</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:{{ profile.email }}">Email Satyam</a>
+          <a class="button" href="{{ profile.linkedin }}">LinkedIn</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Legacy Music Mode -->
-  <section>
-    <h2>Legacy Mode 🎭</h2>
-    <p style="font-style: italic;">Still miss the dramatic music and vague promises?</p>
-    <button class="button" id="playButton">🎵 Play Dramatic Music</button>
-    <p id="timeline" style="margin-top: 10px; font-style: italic;"></p>
-
-    <audio id="dramaticMusic" loop>
-      <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3"/>
-      Your browser does not support the audio element.
-    </audio>
-  </section>
-  
   {% include footer.html %}
-
-  <script>
-    // Theme toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleBtn = document.getElementById("themeToggle");
-      const body = document.body;
-
-      function updateTheme() {
-        const isLight = localStorage.getItem("theme") === "light";
-        body.classList.toggle("light-mode", isLight);
-        if (toggleBtn) {
-          toggleBtn.textContent = isLight ? "🌙 Dark Mode" : "☀️ Light Mode";
-        }
-      }
-
-      if (toggleBtn) {
-        toggleBtn.addEventListener("click", () => {
-          const current = localStorage.getItem("theme");
-          const next = current === "light" ? "dark" : "light";
-          localStorage.setItem("theme", next);
-          updateTheme();
-        });
-      }
-
-      // Initialize theme on page load
-      updateTheme();
-    });
-
-    // Legacy music functionality
-    const vagueTimelines = [
-      "sometime next week... or year.",
-      "soon... in geological terms.",
-      "when the stars align.",
-      "probably before the next ice age.",
-      "when we feel like it!"
-    ];
-    const timelineElement = document.getElementById("timeline");
-    const playButton = document.getElementById("playButton");
-    const dramaticMusic = document.getElementById("dramaticMusic");
-
-    setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * vagueTimelines.length);
-      timelineElement.textContent = vagueTimelines[randomIndex];
-    }, 3000);
-
-    playButton.addEventListener("click", () => {
-      if (dramaticMusic.paused) {
-        dramaticMusic.play();
-        playButton.textContent = "⏸️ Pause Dramatic Music";
-      } else {
-        dramaticMusic.pause();
-        playButton.textContent = "🎵 Play Dramatic Music";
-      }
-    });
-  </script>
-
 </body>
 </html>

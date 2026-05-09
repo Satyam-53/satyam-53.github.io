@@ -1,3 +1,9 @@
-<footer style="margin: 40px 0; font-size: 14px; color: #888; text-align: center;">
-  &copy; {{ site.time | date: "%Y" }} Satyam Srivastava · Built with ❤️ and caffeine · Hosted on GitHub Pages
+{% assign profile = site.data.profile %}
+<footer class="site-footer">
+  <p>&copy; {{ site.time | date: "%Y" }} {{ profile.name }}. Built with Jekyll and hosted on GitHub Pages.</p>
+  <div>
+    <a href="mailto:{{ profile.email }}">Email</a>
+    <a href="{{ profile.linkedin }}">LinkedIn</a>
+    <a href="{{ profile.github }}">GitHub</a>
+  </div>
 </footer>

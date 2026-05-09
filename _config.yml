@@ -1,2 +1,19 @@
 title: "Satyam Srivastava"
-theme: minima  # Or none if you're custom
+description: "AI/ML systems engineer and UC San Diego graduate researcher working on FastVideo, computer vision, and reliable distributed infrastructure."
+url: "https://satyam-53.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+keywords:
+  - AI/ML systems
+  - machine learning systems
+  - FastVideo
+  - UC San Diego
+  - Hao AI Lab
+  - distributed systems
+  - computer vision
+  - autonomous driving
+  - research engineer

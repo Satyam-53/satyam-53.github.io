@@ -1,0 +1,102 @@
+name: "Satyam Srivastava"
+headline: "AI/ML Systems Engineer and Graduate Researcher"
+short_intro: "MS CS student at UC San Diego building at the intersection of machine learning systems, perception, and reliable distributed infrastructure."
+location: "San Diego, CA"
+availability: "Open to AI/ML systems, infrastructure, and research engineering opportunities"
+email: "srivastavasatyam53@gmail.com"
+linkedin: "https://www.linkedin.com/in/satyam-srivastava-981491203/"
+github: "https://github.com/Satyam-53"
+resume_available: false
+resume_path: "/assets/files/resume.pdf"
+resume_note: "Email for resume"
+photo: "/headshot.jpeg"
+
+focus:
+  - "ML systems and scalable AI infrastructure"
+  - "Video generation and efficient model serving"
+  - "Computer vision and autonomous perception"
+  - "Distributed systems and reliability engineering"
+
+stats:
+  - label: "Research publications"
+    value: "4"
+  - label: "Current research"
+    value: "FastVideo"
+  - label: "Systems experience"
+    value: "Cohesity"
+  - label: "Scholarships and grants"
+    value: "7"
+
+experience:
+  - role: "Graduate Student Researcher"
+    organization: "Hao AI Lab, UC San Diego"
+    period: "Mar 2026 - Present"
+    summary: "Working on FastVideo with a focus on practical ML systems for efficient video generation research."
+    bullets:
+      - "Researching systems-oriented techniques for making large-scale generative video models faster and more usable."
+      - "Combining ML research execution with software engineering discipline around reproducibility, iteration speed, and deployment-aware design."
+  - role: "MS Computer Science Student"
+    organization: "UC San Diego"
+    period: "2025 - Present"
+    summary: "Graduate coursework and research spanning machine learning, computer vision, systems, and cognition-inspired AI."
+    bullets:
+      - "Positioning coursework and research toward ML systems, scalable AI, and reliable model deployment."
+  - role: "Member of Technical Staff"
+    organization: "Cohesity"
+    period: "Prior experience"
+    summary: "Built backend and distributed infrastructure for resilient data protection systems."
+    bullets:
+      - "Implemented REST APIs and scalable infrastructure components in production engineering workflows."
+      - "Improved reliability and maintainability through cross-functional systems work, CI/CD integration, and backup-adapter development."
+
+projects:
+  - title: "FastVideo"
+    context: "Hao AI Lab, UC San Diego"
+    tags: ["ML systems", "video generation", "research"]
+    summary: "Current research on systems techniques for faster and more practical video generation."
+  - title: "C-Shenron"
+    context: "UC San Diego"
+    tags: ["simulation", "autonomous driving", "radar"]
+    summary: "Realistic radar simulation framework for CARLA, supporting autonomous driving research and multimodal perception."
+    link: "https://wcsng.ucsd.edu/c-shenron/"
+  - title: "Cognitive-Inspired RL with Episodic Memory"
+    context: "Texas State University"
+    tags: ["reinforcement learning", "episodic memory", "DQN"]
+    summary: "Enhanced Deep Q-Networks with working memory and episodic replay to improve learning efficiency and stability."
+  - title: "Capacitive ECG Reliability"
+    context: "TU Braunschweig"
+    tags: ["medical AI", "computer vision", "signal reliability"]
+    summary: "Developed deep learning methods to estimate cECG signal reliability using video-based pose information."
+  - title: "Distributed Backup Infrastructure"
+    context: "Cohesity"
+    tags: ["distributed systems", "APIs", "CI/CD"]
+    summary: "Built scalable backend components and a backup adapter with production reliability and maintainability in mind."
+
+publications:
+  - title: "C-Shenron: A Realistic Radar Simulation Framework for CARLA"
+    venue: "VTC 2025"
+    link: "https://wcsng.ucsd.edu/c-shenron/"
+  - title: "Demo Abstract: C-Shenron"
+    venue: "ACM SenSys 2025"
+    link: "https://dl.acm.org/doi/10.1145/3715014.3724379"
+  - title: "CEMDQN: Cognitive-inspired Episodic Memory in DQNs"
+    venue: "IJCNN 2023"
+    link: "https://ieeexplore.ieee.org/document/10192032"
+  - title: "Reliability Estimation of Armchair-Based Capacitive ECG"
+    venue: "SPIE Medical Imaging 2023"
+    link: "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12469/124690E/Reliability-estimation-of-armchair-based-capacitive-ECG-using-video-based/10.1117/12.2654327.short"
+
+awards:
+  - "Khorana Scholarship"
+  - "DAAD-WISE Scholarship"
+  - "Mitacs Globalink Research Internship Award"
+  - "BITSAA Udaan Scholarship"
+  - "IEEE CIS Travel Grant"
+  - "BITS Pilani Best Paper Award"
+  - "BITS Merit-cum-Need Scholarship"
+
+leadership:
+  - title: "BITS2Research Alumni Mentorship Program"
+    summary: "Mentoring undergraduate students on research exploration, project development, and career pathways."
+  - title: "Undergraduate Teaching Assistant"
+    summary: "Supported courses in Object Oriented Programming, Discrete Structures, and Computer Programming at BITS Pilani."
