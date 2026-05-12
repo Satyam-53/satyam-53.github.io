@@ -124,8 +124,8 @@ h1 {
 
 h2 {
   margin-bottom: 0;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  line-height: 1.02;
+  font-size: clamp(1.65rem, 3vw, 2.75rem);
+  line-height: 1.1;
   letter-spacing: 0;
 }
 
