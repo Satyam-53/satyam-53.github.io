@@ -53,7 +53,8 @@ projects:
   - title: "FastVideo"
     context: "Hao AI Lab, UC San Diego"
     tags: ["ML systems", "video generation", "research"]
-    summary: "Current research on systems techniques for faster and more practical video generation."
+    summary: "A unified post-training and real-time inference framework for accelerated video generation."
+    link: "https://haoailab.com/FastVideo/"
   - title: "Urban Seismic Resilience"
     context: "Agentic AI, UC San Diego"
     tags: ["multi-agent systems", "agentic AI", "simulation"]
