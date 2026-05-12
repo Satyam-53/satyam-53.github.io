@@ -54,6 +54,16 @@ projects:
     context: "Hao AI Lab, UC San Diego"
     tags: ["ML systems", "video generation", "research"]
     summary: "Current research on systems techniques for faster and more practical video generation."
+  - title: "Urban Seismic Resilience"
+    context: "Agentic AI, UC San Diego"
+    tags: ["multi-agent systems", "agentic AI", "simulation"]
+    summary: "Built a seismic disaster simulation testbed for heterogeneous rescue agents, showing hierarchical coordination can improve civilian survival by up to 7.6x over decentralized policies."
+    link: "/assets/files/urban-seismic-resilience-agents-report.pdf"
+  - title: "Convex Resource Allocation for Efficient LLM Inference"
+    context: "Convex Optimization, UC San Diego"
+    tags: ["LLM inference", "convex optimization", "scheduling"]
+    summary: "Formulated LLM batch scheduling as a convex optimization problem, deriving KKT-based resource pricing signals and validating a convex-guided scheduler with about 6% higher throughput in constrained regimes."
+    link: "/assets/files/convex-resource-allocation-llm-inference.pdf"
   - title: "C-Shenron"
     context: "UC San Diego"
     tags: ["simulation", "autonomous driving", "radar"]
