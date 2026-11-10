@@ -1,49 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Writing | Satyam Srivastava</title>
-  <meta name="description" content="Writing by Satyam Srivastava.">
-  <link rel="stylesheet" href="/assets/css/main.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="site-mark" href="/" aria-label="Satyam Srivastava home">
-      <span>SS</span>
-      <strong>Satyam Srivastava</strong>
-    </a>
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="/#experience">Experience</a>
-      <a href="/#projects">Projects</a>
-      <a href="/#publications">Publications</a>
-      <a href="/#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="section-shell split-section">
-      <div>
-        <p class="section-label">Writing</p>
-        <h2>Notes and essays will live here later.</h2>
-      </div>
-      <div class="compact-list">
-        <article>
-          <h3>Writing is not published yet</h3>
-          <p>This page is intentionally quiet until there are polished posts worth linking from the main portfolio.</p>
-          <a href="/">Back to portfolio</a>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2026 Satyam Srivastava. Built with Jekyll and hosted on GitHub Pages.</p>
-    <div>
-      <a href="mailto:srivastavasatyam53@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/satyam-srivastava-981491203/">LinkedIn</a>
-      <a href="https://github.com/Satyam-53">GitHub</a>
-    </div>
-  </footer>
-</body>
-</html>
+---
+layout: writing
+title: Writing
+description: Notes on LLM inference, GPU performance, and ML systems by Satyam Srivastava.
+permalink: /blog/
+---
+<header>
+  <p class="section-label">Writing</p>
+  <h1>Experiments and systems notes</h1>
+  <p class="article-description">Measurements, implementation details, and lessons from working on inference and GPU performance.</p>
+</header>
+<div class="writing-list">
+  {% assign articles = site.pages | where: 'article', true | sort: 'date' | reverse %}
+  {% for post in articles %}
+  <article>
+    <p class="section-label">Inference systems</p>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p>{{ post.description }}</p>
+    <p class="article-meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time> · {{ post.content | number_of_words | divided_by: 220 | plus: 1 }} min read</p>
+  </article>
+  {% endfor %}
+</div>

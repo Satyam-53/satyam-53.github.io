@@ -1,0 +1,52 @@
+{% assign profile = site.data.profile %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="author" content="{{ profile.name | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="{% if page.article %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ profile.photo | absolute_url }}">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
+</head>
+<body class="writing-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="site-mark" href="{{ '/' | relative_url }}" aria-label="{{ profile.name | escape }} home">
+      <span>SS</span><strong>{{ profile.name }}</strong>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="{{ '/' | relative_url }}#experience">Experience</a>
+      <a href="{{ '/' | relative_url }}#projects">Projects</a>
+      <a href="{{ '/blog/' | relative_url }}" {% unless page.article %}aria-current="page"{% endunless %}>Writing</a>
+      <a href="{{ '/' | relative_url }}#contact">Contact</a>
+    </nav>
+  </header>
+  <main id="main-content" class="writing-shell">
+    {% if page.article %}
+    <article>
+      <header class="article-header">
+        <a class="back-link" href="{{ '/blog/' | relative_url }}">← All writing</a>
+        <p class="section-label">Inference systems · Experiment notes</p>
+        <h1>{{ page.title }}</h1>
+        <p class="article-description">{{ page.description }}</p>
+        <p class="article-meta">{{ profile.name }} · <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time> · {{ content | number_of_words | divided_by: 220 | plus: 1 }} min read</p>
+      </header>
+      <div class="article-body">{{ content }}</div>
+      <footer class="article-end"><a href="{{ '/blog/' | relative_url }}">← Back to writing</a></footer>
+    </article>
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </main>
+  {% include footer.html %}
+</body>
+</html>
